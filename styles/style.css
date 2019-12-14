@@ -1,0 +1,61 @@
+.replacement{
+    max-height: 35px; /* should equal the -input height */
+    width: 50%; 
+    margin-top: 10px;
+    overflow: hidden; /* important to have this to hide the list */
+
+    border: 1px solid indigo; /* The border goes here DON'T PUT BORDER FO THE INPUT */
+    border-radius: 0px; /* The border-radius goes here DON'T PUT BORDER-RADUIS FO THE INPUT */
+
+    transition: all 0.5s ease-in-out; /* To add smooth effect when you open the dropdown */
+}
+
+.replacement * {
+    cursor: pointer;
+}
+
+.replacement-opened{
+    max-height: 200px;
+}
+
+.replacement-input{
+    border: 0;
+    outline: none;
+
+    padding: 10px;
+
+    width: 100%;
+}
+
+.replacement-ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    background-color: #000000;
+}
+
+.replacement-ul--li{
+    transition: all 0.2s ease;
+    color: white;
+    padding: 10px ;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.replacement-ul--li .checker.checked{
+    background-color: #fff;
+    color: black;
+}
+
+.replacement-ul--li:hover{
+    background-color:rgb(163, 17, 168);
+}
+
+.replacement-ul--li .checker{
+    border: 1px solid white;
+    width: 10px;
+    height: 10px;
+    display: inline-block;
+}
