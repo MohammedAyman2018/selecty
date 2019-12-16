@@ -14,8 +14,11 @@ manualMultiple(my_multi_select, "choose");
 /* ======================== Multiple selections ======================== */
 
 
-import glopalNormal from './modules/single/all.js';
-glopalNormal(select, "normal")
+import allOne from './modules/single/all.js';
+import singleSelect from './modules/single/one.js';
+
+allOne(select, "normal");
+singleSelect(my_select, "My normal");
 
 // add animation dude ;)
 let togglers = document.querySelectorAll('.replacement-input');
@@ -31,4 +34,5 @@ togglers.forEach(function (div) {
 document.getElementById("done").onclick = function () { 
         console.log("val", $('select#goal').val());
         console.log("ad", $('select#dd').val());
+        console.log("DAS", $('select#DAS').val());
  };

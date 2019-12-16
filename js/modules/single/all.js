@@ -1,6 +1,6 @@
 /* ======================== For All Normal selections ======================== */
 
-export default function glopalNormal(selecty, holder) {
+export default function allOne(selecty, holder) {
     selecty.forEach(function (exactSelect) {
         let value = "", // Selection value
             optText = "",
@@ -59,9 +59,7 @@ export default function glopalNormal(selecty, holder) {
 
         // handle the selection
         let clickable = parent.querySelectorAll('.replacement-ul--li');
-        let checker = parent.querySelectorAll('.replacement-ul--li .checker');
-        
-        
+
         clickable.forEach(function (li) {
             li.onclick = function () {
                 let el = this;
@@ -71,11 +69,11 @@ export default function glopalNormal(selecty, holder) {
                 let exactOpt = allOptions.find(option => {
                     return option.value == val;
                 });
-                
+
                 let input = el.parentElement.previousSibling;
-                
+
                 let checker_checked = parent.querySelectorAll('.replacement-ul--li .checker.checked');
-                if(checker_checked) {
+                if (checker_checked) {
                     checker_checked.forEach(n => {
                         n.classList.remove("checked")
                     });
@@ -95,7 +93,7 @@ export default function glopalNormal(selecty, holder) {
 
                     // Set the placeholder
                     input.setAttribute("placeholder", text)
-                } 
+                }
 
                 console.log(exactOpt, "o");
 
