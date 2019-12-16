@@ -1,40 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="./styles/style.css">
+    <link rel="stylesheet" href="./styles/site.css">
     <title>Document</title>
 </head>
+
 <body>
 
-    <div data-wrapper="mohammed">
-        <select name="mohammed" id="goal" multiple>
-            <option  value="156">1dsa</option>
-            <option value="20">2</option>
-            <option value="30">3</option>
-            <option value="40">4</option>
-            <option value="50">5</option>
-            <option value="60">6</option>
-        </select>
-    </div>
-    
-    <div data-wrapper="hhh">
-        <select name="hhh" id="dd" multiple>
-            <option value="1651" >1</option>
-            <option value="20">2</option>
-            <option value="30">3</option>
-            <option value="40">4</option>
-            <option value="50">5</option>
-            <option value="60">6</option>
-        </select>
+    <nav>
+        <div class="container">
+            <div class="flex center">
+
+                <h1>Selecty</h1>
+                <ul>
+                    <li>Single select</li>
+                    <li>Multi select</li>
+                    <li>Filtering</li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <h2>Global Multi select</h2>
+        <div data-wrapper="mohammed">
+            <select name="mohammed" id="goal" multiple>
+                <option value="156">1dsa</option>
+                <option value="20">2</option>
+                <option value="30">3</option>
+                <option value="40">4</option>
+                <option value="50">5</option>
+                <option value="60">6</option>
+            </select>
+        </div>
+        <h2>Exact Selector</h2>
+
+        <div data-wrapper="hhh">
+            <select name="hhh" id="dd" multiple>
+                <option value="1651">1</option>
+                <option value="20">2</option>
+                <option value="30">3</option>
+                <option value="40">4</option>
+                <option value="50">5</option>
+                <option value="60">6</option>
+            </select>
+        </div>
+
+        <h2>Global Normal select</h2>
+        <div data-wrapper="DSA">
+            <select name="DSA" id="DAS">
+                <option value="1651">1</option>
+                <option value="20">2</option>
+                <option value="30">3</option>
+                <option value="40">4</option>
+                <option value="50">5</option>
+                <option value="60">6</option>
+            </select>
+        </div>
+
+        <button id="done" type="button">submit</button>
     </div>
 
-    <button id="done" type="button">submit</button>
 
-    <script src="./js/manualMltiple.js" type="module"></script>
-    <script src="./js/glopalMultiple.js" type="module"></script>
+    <script src="./js/lib/jquery.slim.js"></script>
+
+    <script src="./js/modules/multi/all.js" type="module"></script>
+    <script src="./js/modules/multi/one.js" type="module"></script>
+    <script src="./js/modules/single/all.js" type="module"></script>
     <script src="./js/app.js" type="module"></script>
 </body>
+
 </html>

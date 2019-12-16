@@ -20,7 +20,7 @@ export default function manualMultiple(selecty, holder) {
     placeholder.setAttribute('placeholder', ds); // add initial value 
 
     /* Delete the first item which is the placeholder */
-    optAll.remove(0);
+    if(!holder) optAll.remove(0);
 
     // The whole list
     let our_list = document.createElement('ul');
@@ -65,18 +65,27 @@ export default function manualMultiple(selecty, holder) {
             let el = this;
             let text = this.firstChild.innerText;
             let val = this.getAttribute('data-val');
+            let allOptions = [...optAll];
+            let exactOpt = allOptions.find( option =>{
+                return option.value == val;
+            });
+
             let input = el.parentElement.previousSibling;
-
+            
             /* Add Checked class to checker to inform the user he has checked the button and take the value of it or remove it from the value array */
-
+            
             if (!el.lastElementChild.classList.contains("checked")) {
+                exactOpt.selected='selected';
                 el.lastElementChild.classList.add("checked");
+                value.push(val);
                 optText.push(text);
-
+                
                 // Set the placeholder
                 input.setAttribute("placeholder", optText.join("-"))
             } else {
+                exactOpt.selected='';
                 el.lastElementChild.classList.remove("checked");
+                value.pop(val);
                 optText.pop(text);
 
                 // Set the placeholder
@@ -86,8 +95,10 @@ export default function manualMultiple(selecty, holder) {
                     input.setAttribute("placeholder", ds);
             };
 
+            console.log(exactOpt);
+            
         }
     });
 
-    selecty.value = value
+    
 };

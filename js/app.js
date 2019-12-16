@@ -1,12 +1,21 @@
 let select = [...document.querySelectorAll('select')]; // All select tags in the dom
+let my_select = document.getElementById('DAS');
 
 /* ======================== Multiple selections ======================== */
-import glopalMultiple from './glopalMultiple.js';
-import manualMultiple from './manualMltiple.js';
-// glopalMultiple(select, "Choose you number");
 
-let my_select = document.getElementById('goal');
-manualMultiple(my_select, "choose");
+/*
+import glopalMultiple from './modules/multi/all.js';
+import manualMultiple from './modules/mmulti/one.js';
+
+glopalMultiple(select, "Choose you number");
+let my_multi_select = document.getElementById('dd');
+manualMultiple(my_multi_select, "choose");
+
+/* ======================== Multiple selections ======================== */
+
+
+import glopalNormal from './modules/single/all.js';
+glopalNormal(select, "normal")
 
 // add animation dude ;)
 let togglers = document.querySelectorAll('.replacement-input');
@@ -20,7 +29,6 @@ togglers.forEach(function (div) {
 });
 
 document.getElementById("done").onclick = function () { 
-    select.forEach( function (sl) {
-        console.log(sl , sl.value);
-    });
+        console.log("val", $('select#goal').val());
+        console.log("ad", $('select#dd').val());
  };
